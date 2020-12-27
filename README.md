@@ -47,4 +47,17 @@ Wanneer alle gebroken en opgegeten is stopt kerstdag voor ons.
     De klasse overschrijft de ToString methode en toont de naam van de ketting en de melding "... lights still burning" waarbij "..." uiteraard staat voor de Health (of resterende lichtjes) van het ketting.  
     
 
-  
+  * Class ChristmasService.  Deze service klasse bevat alle logica van onze "Christmas Havoc" (kerstdag ravage).  
+    Deze klasse heeft 2 props :  
+      * List<ChristmasDecoreation> ChristmasDecorations   
+        Deze list zal alle versieringen (ballen, koekjes en lichtjes) bevatten die in de constructor zullen worden aangemaakt.  
+      * bool IsChristmasDone  
+        Deze prop wordt in de constructor op false gezet en zal pas op true worden gezet wanneer alles vernietigd of opgegeten werd.  
+    In de constructor bepaal je of maak je volgende zaken aan :   
+      * Hoeveel kwajongens zijn er (1 of 2)  
+      * Hoeveel katten zijn er (1 of 2)  
+      * Hoeveel kerstballen zijn er (20 tot en met 50)  
+      * Hoeveel kerstkoekjes zijn er (20 tot en met 30)  
+      * Hoeveel lichtslingers zijn er (1 tot en met 3)  
+     
+ 
