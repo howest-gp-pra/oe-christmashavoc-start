@@ -49,15 +49,26 @@ Wanneer alle gebroken en opgegeten is stopt kerstdag voor ons.
 
   * Class ChristmasService.  Deze service klasse bevat alle logica van onze "Christmas Havoc" (kerstdag ravage).  
     Deze klasse heeft 2 props :  
-      * List<ChristmasDecoreation> ChristmasDecorations   
-        Deze list zal alle versieringen (ballen, koekjes en lichtjes) bevatten die in de constructor zullen worden aangemaakt.  
-      * bool IsChristmasDone  
-        Deze prop wordt in de constructor op false gezet en zal pas op true worden gezet wanneer alles vernietigd of opgegeten werd.  
-    In de constructor bepaal je of maak je volgende zaken aan :   
-      * Hoeveel kwajongens zijn er (1 of 2)  
-      * Hoeveel katten zijn er (1 of 2)  
-      * Hoeveel kerstballen zijn er (20 tot en met 50)  
-      * Hoeveel kerstkoekjes zijn er (20 tot en met 30)  
-      * Hoeveel lichtslingers zijn er (1 tot en met 3)  
-     
+     * List<ChristmasDecoreation> ChristmasDecorations   
+       Deze list zal alle versieringen (ballen, koekjes en lichtjes) bevatten die in de constructor zullen worden aangemaakt.  
+     * bool IsChristmasDone  
+       Deze prop wordt in de constructor op false gezet en zal pas op true worden gezet wanneer alles vernietigd of opgegeten werd.   
  
+    In de constructor bepaal je of maak je volgende zaken aan :   
+     * Hoeveel kwajongens zijn er (1 of 2)  
+     * Hoeveel katten zijn er (1 of 2)  
+     * Hoeveel kerstballen zijn er (20 tot en met 50)  
+     * Hoeveel kerstkoekjes zijn er (20 tot en met 30)  
+     * Hoeveel lichtslingers zijn er (1 tot en met 3)  
+     
+    De klasse heeft de void methode ReleaseHavoc (geen argumenten).  
+    Wanneer deze methode wordt uitgevoerd gan je voor elke kawjonen en voor elke kat alle kertversieringen langs en laat je hun gang gaan op elk van deze.  
+    
+    De klasse heeft de string methode GetReport (geen argumenten).  
+    In deze methode worden alle kerstversieringen overlopen en wordt de stand van zaken geretourneerd (zie demo : de retourwaarde wordt in de textblock geplaatst).  
+    Als er in deze methode wordt vastgesteld dat alle koekjes opgegeten zijn en alles gebroken is, wordt de prop IsChristmasDone op true ingesteld.  
+    
+    De klasse heeft tenslotte nog 3 methoden GetChristmasBaubles(), GetChristmasCookies() en GetChristmasLights() die elk een List van ChristmasDecoration retourneren die respectievelijk gevuld worden met enkel ChristmasBaubles, ChristmasCookies of ChristmasLights (deze zal je nodig hebben bij de radio buttons in je WPF).
+    
+    
+
