@@ -21,8 +21,30 @@ Van zodra wij dus de kamer verlaten vallen kwajongen(s) en kat(ten) onze boom aa
   
 
 Telkens je in het programma op de knop "btnReleaseHavoc" klikt laat je de kwajongen(s) en de kat(ten) los op de boom.  
-Je zorgt er dan voor dat per kerstbal, koekje en ketting met kertlichtjes getoond wordt in welke situatie ze zich bevinden (zie demo).  Je toont eveneens een inventaris van wat er gebroken of opgegeten is en wat er eventueel nog overblijft.  
-Wanneer alle gebroken en opgegeten is stopt kerstdag voor ons.
+Je zorgt er dan voor dat per kerstbal, koekje en ketting met kertlichtjes getoond wordt in welke situatie ze zich bevinden (zie demo).  Je toont eveneens een inventaris van wat er gebroken of opgegeten is en wat er eventueel nog overblijft.   
+Wanneer alle gebroken en opgegeten is stopt kerstdag voor ons.  
 
+## Opbouw :  
+
+  * Interface IBreakable : deze interface beschrijft 1 void methode TryToBreak die geen argumenten ontvangt.  
+  * Interface IEatable : deze interface beschrijft 1 void methode TryToEat die geen argumenten ontvangt.  
+    
+  * Class ChristmasDecoration : dit is een basisklasse waarvan we in onze WPF geen instantie mogen kunnen maken.  
+    Deze klasse heeft 2 fullprops : int Health en string Name  
+    Deze klasse heeft 1 argumentloze constructor die de health op 100 instelt.  
+      
+  * Class ChristmasBauble : erft over van ChristmasDecoration en implementeert IBreakbable  
+    In de argumentloze constructor van deze klasse wordt de Name prop gevuld.  De naam bestaat uit "Bauble nr " + een volgnummer die voor elke bal verschillend is.   
+    Wanneer de TryToBreak methode wordt uitgevoerd ga je random bepalen of de bal al dan niet gebroken wordt.  Wordt de bal gebroken, dan krijgt de Health eigenschap de waarde 0.  
+    De klasse overschrijft de ToString methode en toont de naam van de bal en de melding "I'm broken" indien de bal gebroken is of "not broken yet" indien de bal nog niet gebroken is.  
+  * Class ChristmasCookie : erft over van ChristmasDecoration en implementeert IEatable  
+    In de argumentloze constructor van deze klasse wordt de Name prop gevuld.  De naam bestaat uit "Cookie nr " + een volgnummer die voor elk koekje verschillend is.    
+    Wanneer de TryToEat methode wordt uitgevoerd ga je random bepalen of er aan het koekje geknabbeld zal worden.  Is dat zo, dan bepaal je random hoeveel er van het koekje opgegeten wordt : deze waarde ligt gaat van 10 tot en met 50.  Je vermindert uiteraard de eigenschap Health hiermee.  Zorg er uiteraard voor dat de Health niet kleiner kan worden dan 0.  
+    De klasse overschrijft de ToString methode en toont de naam van het koekje en de melding "...% remaining" waarbij "..." uiteraard staat voor de Health (of resterende gedeelte) van het koekje.  
+  * Class ChristmasLights : erft over van ChristmasDecoration en implementeert IBreakbable   
+    In de argumentloze constructor van deze klasse wordt de Name prop gevuld.  De naam bestaat uit "Christmaslights nr " + een volgnummer die voor elke ketting verschillend is.   
+    Wanneer de TryToBreak methode wordt uitgevoerd ga je random bepalen hoeveel lichtjes er in de ketting gebroken worden.  Dit is een waarde van 10 tot en met 20.  Uiteraard ga je ook hier de Health prop verminderen en zorg je er voor dat deze niet kleiner kan worden dan 0.
+    De klasse overschrijft de ToString methode en toont de naam van de ketting en de melding "... lights still burning" waarbij "..." uiteraard staat voor de Health (of resterende lichtjes) van het ketting.  
+    
 
   
