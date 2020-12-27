@@ -24,6 +24,10 @@ Telkens je in het programma op de knop "btnReleaseHavoc" klikt laat je de kwajon
 Je zorgt er dan voor dat per kerstbal, koekje en ketting met kertlichtjes getoond wordt in welke situatie ze zich bevinden (zie demo).  Je toont eveneens een inventaris van wat er gebroken of opgegeten is en wat er eventueel nog overblijft.   
 Wanneer alle gebroken en opgegeten is stopt kerstdag voor ons.  
 
+## Demo : 
+
+![demo](assets/christmasHavoc.gif)  
+
 ## Opbouw :  
 
   * Interface **IBreakable** : deze interface beschrijft 1 void methode TryToBreak die geen argumenten ontvangt.  
